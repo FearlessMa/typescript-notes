@@ -52,4 +52,67 @@ let num7 = "seven";
 
 * 联合类型（Union Types）表示取值可以为多种类型中的一种。
 
+```ts
+//  联合类型
+type des = number | string;
+let description: des = "desc";
+description = 123;
 
+let a: number | boolean = 1;
+a = false;
+```
+
+## 对象类型——接口
+
+* 在 TypeScript 中，我们使用接口（Interfaces）来定义对象的类型。
+
+
+```ts
+// interface
+// 接口定义函数
+interface fun {
+  (): any
+}
+
+interface IData {
+  // 只读属性
+  readonly id: number,
+  // 基本类型属性
+  name: string,
+  age: number,
+  // 可有可无属性
+  description?: string,
+  // 函数
+  toString(age?: number, name?: string): void,
+  // 引用 fun
+  getAge: fun
+}
+
+// 定义任意属性的接口
+interface IProps {
+  [name: string]: any
+}
+
+const data: IData = {
+  id: 1,
+  name: "data",
+  age: 10,
+  toString() {
+    console.log(this.age, this.name)
+  },
+  getAge() {
+    return this.age;
+  }
+}
+
+data.toString();
+
+const props: IProps = {
+  name: 'p',
+  age: 1,
+  data: data,
+  getAge: data.getAge.bind(data)
+}
+props.data.toString();
+console.log('props.getAge(): ', props.getAge());
+```
