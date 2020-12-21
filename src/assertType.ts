@@ -32,3 +32,43 @@ function isFish(animal: ICat | IFish): boolean {
 
   return false;
 }
+
+// 将一个父类断言为更加具体的子类
+class ApiError extends Error {
+  code: number = 0;
+}
+class HttpError extends Error {
+  statusCode: number = 200;
+}
+
+function isApiError(error: Error) {
+  if (typeof (error as ApiError).code === 'number') {
+    return true;
+  }
+  return false;
+}
+
+// 将任何一个类型断言为 any
+
+
+const foo: number = 1;
+// foo.length = 1;
+// 类型“number”上不存在属性“length”。ts(2339)
+
+// window.foo = 1;
+// 类型“Window & typeof globalThis”上不存在属性“foo”。ts(2339)
+(window as any).foo = 1;
+
+// 将 any 断言为一个具体的类型
+
+function getCacheData(key: string): any {
+  return (window as any).cache[key];
+}
+interface Cat {
+  name: string;
+  run(): void;
+}
+
+const tom = getCacheData('tom') as Cat;
+tom.run();
+
