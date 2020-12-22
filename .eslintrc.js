@@ -20,7 +20,8 @@ module.exports = {
         // "vue"
     ],
     "rules": {
-        "no-unused-vars": 0
+        "no-unused-vars": 0,
+        "no-undef": 0,
     },
     // "parser": "babel-eslint"
 };
