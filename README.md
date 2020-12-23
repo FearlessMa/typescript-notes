@@ -5,7 +5,7 @@
 > [深入理解TypeScript](https://jkchao.github.io/typescript-book-chinese/)
 > [TypeScript入门教程](https://ts.xcatliu.com/)
 > [了不起的 TypeScript 入门教程](http://www.semlinker.com/ts-comprehensive-tutorial/#%E4%B8%80%E3%80%81TypeScript-%E6%98%AF%E4%BB%80%E4%B9%88)
-> [ts代码检测](https://ts.xcatliu.com/engineering/compiler-options.html)
+> [ts代码检测](https://ts.xcatliu.com/engineering/lint.html)
 
 * 1.初始化ts配置，生成tsconfig.json文件。`tsc --init`。 
 * 2.使用node运行ts文件，安装`ts-node`。
