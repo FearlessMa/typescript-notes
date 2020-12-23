@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "ts-init": "tsc --init",
-    "ts": " tsc src/*.ts",
+    "ts": " tsc",
     "commit": "auto-commit"
   },
   "author": "",

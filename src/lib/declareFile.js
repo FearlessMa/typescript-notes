@@ -1,5 +1,6 @@
+"use strict";
 // 声明语句
-// 声明全面变量 JQuery 的描述，一个方法 接收string参数 返回 any
+// 声明全面变量 JQuery 的描述，一个方法 接收string参数 返回 any 
 // declare var JQuery: (selector: string) => any;
 // 找不到名称“JQuery”。ts(2304)
 var eleFoo = JQuery('foo');
