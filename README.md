@@ -5,13 +5,10 @@
 > [深入理解TypeScript](https://jkchao.github.io/typescript-book-chinese/)
 > [TypeScript入门教程](https://ts.xcatliu.com/)
 
-> 1.初始化ts配置，生成tsconfig.json文件。
-
-```shell
-tsc --init 
-```
-
-> 2.使用node运行ts文件，安装ts-node。
+* 1.初始化ts配置，生成tsconfig.json文件。`tsc --init`。 
+* 2.使用node运行ts文件，安装`ts-node`。
+* 3.`tsc` 命令增加参数后 tsconfig.json 配置文件会失效。
+* 4.`typedoc`库，可以生产typescript文档，命令`typedoc --out docs src`。
 
 
 ## 原始数据类型
