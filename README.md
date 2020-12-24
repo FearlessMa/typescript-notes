@@ -617,3 +617,59 @@ interface Alarm {
 ```
 
 
+
+## 全局模块与文件模块
+
+* 默认TypeScript中声明的代码都处于全局命名空间中。使用全局变量空间是危险的，因为它会与文件内的代码命名冲突。
+* 文件模块避免全局污染。
+* 推荐模块使用`module: commonjs`。
+* 模块语法推荐使用ES模块语法。
+
+
+全局模块
+```ts
+// foo.ts
+const foo1 : string = "foo";
+
+// bar.ts 可以使用foo1
+let bar: string = 'bar';
+bar = foo1;
+console.log('bar: ', bar);
+```
+
+局部模块
+```ts
+// foo.ts
+let foo1: string = 'foo';
+export { foo1 };
+
+
+// bar.ts
+let bar: string = 'bar';
+
+// 无法直接使用全局变量foo1
+// 找不到名称“foo1”。你是否指的是“foo”?ts(2552)
+// assertType.ts(54, 7): 在此处声明了 "foo"
+bar = foo1;
+console.log('bar: ', bar);
+
+
+// bar.ts 使用foo1
+// 方法1
+import * as foo from './foo';
+let bar: string = 'bar';
+bar = foo.foo1;
+console.log('bar: ', bar);
+
+// 方法2
+import { foo1 } from './foo'
+let bar: string = 'bar';
+bar = foo1;
+console.log('bar: ', bar);
+
+// 方法3
+import { foo1 as foo } from './foo';
+let bar: string = 'bar';
+bar = foo;
+console.log('bar: ', bar);
+```

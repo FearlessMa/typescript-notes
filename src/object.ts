@@ -26,3 +26,11 @@
 //   sleep = () => { }
 
 // } 
+
+
+// let a :IData= '123';
+
+// type IData = string;
+
+
+// export { a }
