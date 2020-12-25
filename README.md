@@ -3,9 +3,15 @@
 
 > 参考
 > [深入理解TypeScript](https://jkchao.github.io/typescript-book-chinese/)
+> 
 > [TypeScript入门教程](https://ts.xcatliu.com/)
+> 
 > [了不起的 TypeScript 入门教程](http://www.semlinker.com/ts-comprehensive-tutorial/#%E4%B8%80%E3%80%81TypeScript-%E6%98%AF%E4%BB%80%E4%B9%88)
+> 
 > [ts代码检测](https://ts.xcatliu.com/engineering/lint.html)
+> 
+> [从javascript迁移](https://jkchao.github.io/typescript-book-chinese/typings/migrating.html#%E7%AC%AC%E4%B8%89%E6%96%B9%E4%BB%A3%E7%A0%81)
+
 
 * 1.初始化ts配置，生成tsconfig.json文件。`tsc --init`。 
 * 2.使用node运行ts文件，安装`ts-node`。
@@ -69,6 +75,8 @@ a = false;
 ## 对象类型——接口
 
 > 在 TypeScript 中，我们使用接口（Interfaces）来定义对象的类型。
+> 接口是 TypeScript 的一个核心知识，它能合并众多类型声明至一个类型声明
+
 
 
 ```ts
@@ -672,4 +680,33 @@ import { foo1 as foo } from './foo';
 let bar: string = 'bar';
 bar = foo;
 console.log('bar: ', bar);
+```
+
+
+## 交叉类型
+
+* 在 JavaScript 中， `extend` 是一种非常常见的模式，在这种模式中，你可以从两个对象中创建一个新对象，新对象拥有着两个对象所有的功能。交叉类型可以让你安全的使用此种模式
+
+```ts
+// 返回 T & U  合并的类型
+function extend<T extends object, U extends object>(first: T, second: U): T & U {
+  const result = <T & U>{};
+  for (let id in first) {
+    (<T>result)[id] = first[id];
+  }
+  for (let id in second) {
+    if (!result.hasOwnProperty(id)) {
+      (<U>result)[id] = second[id];
+    }
+  }
+
+  return result;
+}
+
+// 返回 x = {a:'hello',b:42}
+const x = extend({ a: 'hello' }, { b: 42 });
+
+// 现在 x 拥有了 a 属性与 b 属性
+const a = x.a;
+const b = x.b;
 ```
