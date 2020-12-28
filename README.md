@@ -34,7 +34,7 @@ let nullData: null = null;
 
 ## any 
 
-> 为声明的变量默认为`any`类型
+* 为声明的变量默认为`any`类型
 
 ```ts
 // any 任意值
@@ -61,7 +61,7 @@ let num7 = "seven";
 
 ## 联合类型
 
-> 联合类型（Union Types）表示取值可以为多种类型中的一种。
+* 联合类型（Union Types）表示取值可以为多种类型中的一种。
 
 ```ts
 //  联合类型
@@ -75,8 +75,8 @@ a = false;
 
 ## 对象类型——接口
 
-> 在 TypeScript 中，我们使用接口（Interfaces）来定义对象的类型。
-> 接口是 TypeScript 的一个核心知识，它能合并众多类型声明至一个类型声明
+* 在 TypeScript 中，我们使用接口（Interfaces）来定义对象的类型。
+* 接口是 TypeScript 的一个核心知识，它能合并众多类型声明至一个类型声明
 
 
 
@@ -132,7 +132,7 @@ console.log('props.getAge(): ', props.getAge());
 
 ## 数组的类型
 
-> 在 TypeScript 中，数组类型有多种定义方式，比较灵活。
+* 在 TypeScript 中，数组类型有多种定义方式，比较灵活。
 
 ```ts
 // 基础用法
@@ -169,7 +169,7 @@ fn(1, { a: 1 }, 'test')
 
 ## 函数类型
 
-> 注意不要混淆了 TypeScript 中的 => 和 ES6 中的 =>。在 TypeScript 的类型定义中，=> 用来表示函数的定义，左边是输入类型，需要用括号括起来，右边是输出类型。
+* 注意不要混淆了 TypeScript 中的 => 和 ES6 中的 =>。在 TypeScript 的类型定义中，=> 用来表示函数的定义，左边是输入类型，需要用括号括起来，右边是输出类型。
 
 ```ts
 //  函数类型
@@ -258,7 +258,7 @@ function reverse(x: number | string): number | string {
 
 ## 断言类型
 
->  类型断言（Type Assertion）可以用来手动指定一个值的类型。
+*  类型断言（Type Assertion）可以用来手动指定一个值的类型。
 
 
 
@@ -710,4 +710,39 @@ const x = extend({ a: 'hello' }, { b: 42 });
 // 现在 x 拥有了 a 属性与 b 属性
 const a = x.a;
 const b = x.b;
+```
+
+## 有静态方法的枚举
+
+* 你可以使用 enum + namespace 的声明的方式向枚举类型添加静态方法。如下例所示，我们将静态成员 isBusinessDay 添加到枚举上
+
+```ts
+enum Weekday {
+    Monday,
+    Tuesday,
+    Wednesday,
+    Thursday,
+    Friday,
+    Saturday,
+    Sunday
+}
+
+namespace Weekday {
+    export function isBusinessDay(day: Weekday) {
+        switch (day) {
+            case Weekday.Saturday:
+            case Weekday.Sunday:
+                return false;
+            default:
+                return true;
+        }
+    }
+}
+
+const mon = Weekday.Monday;
+const sun = Weekday.Sunday;
+
+console.log(Weekday.isBusinessDay(mon)); // true
+console.log(Weekday.isBusinessDay(sun));
+console.log('Weekday.Friday: ', Weekday.Friday);
 ```
