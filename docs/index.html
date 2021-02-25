@@ -68,20 +68,19 @@
 					<h2>TypeScript</h2>
 				</a>
 				<blockquote>
-					<p>参考
-						<a href="https://jkchao.github.io/typescript-book-chinese/">深入理解TypeScript</a>
-					<a href="https://ts.xcatliu.com/">TypeScript入门教程</a></p>
+					<p>参考</p>
+					<p><a href="https://jkchao.github.io/typescript-book-chinese/">深入理解TypeScript</a></p>
+					<p><a href="https://ts.xcatliu.com/">TypeScript入门教程</a></p>
+					<p><a href="http://www.semlinker.com/ts-comprehensive-tutorial/#%E4%B8%80%E3%80%81TypeScript-%E6%98%AF%E4%BB%80%E4%B9%88">了不起的 TypeScript 入门教程</a></p>
+					<p><a href="https://ts.xcatliu.com/engineering/lint.html">ts代码检测</a></p>
+					<p><a href="https://jkchao.github.io/typescript-book-chinese/typings/migrating.html#%E7%AC%AC%E4%B8%89%E6%96%B9%E4%BB%A3%E7%A0%81">从javascript迁移</a></p>
 				</blockquote>
-				<blockquote>
-					<p>1.初始化ts配置，生成tsconfig.json文件。</p>
-				</blockquote>
-				<pre><code class="language-shell">tsc --init </code></pre>
-				<blockquote>
-					<p>2.使用node运行ts文件，安装ts-node。</p>
-				</blockquote>
-				<blockquote>
-					<p>3.tsc 命令增加参数后 tsconfig.json 配置文件会失效</p>
-				</blockquote>
+				<ul>
+					<li>1.初始化ts配置，生成tsconfig.json文件。<code>tsc --init</code>。 </li>
+					<li>2.使用node运行ts文件，安装<code>ts-node</code>。</li>
+					<li>3.<code>tsc</code> 命令增加参数后 tsconfig.json 配置文件会失效。</li>
+					<li>4.<code>typedoc</code>库，可以生产typescript文档，命令<code>typedoc --out docs src</code>。</li>
+				</ul>
 				<a href="#原始数据类型" id="原始数据类型" style="color: inherit; text-decoration: none;">
 					<h2>原始数据类型</h2>
 				</a>
@@ -94,9 +93,9 @@
 				<a href="#any" id="any" style="color: inherit; text-decoration: none;">
 					<h2>any</h2>
 				</a>
-				<blockquote>
-					<p>为声明的变量默认为<code>any</code>类型</p>
-				</blockquote>
+				<ul>
+					<li>为声明的变量默认为<code>any</code>类型</li>
+				</ul>
 				<pre><code class="language-ts"><span class="hljs-comment">// any 任意值</span>
 <span class="hljs-comment">// 默认any 类型</span>
 <span class="hljs-keyword">let</span> a ;
@@ -117,9 +116,9 @@ anyThing.myName.setFirstName(<span class="hljs-string">&#x27;Cat&#x27;</span>);<
 				<a href="#联合类型" id="联合类型" style="color: inherit; text-decoration: none;">
 					<h2>联合类型</h2>
 				</a>
-				<blockquote>
-					<p>联合类型（Union Types）表示取值可以为多种类型中的一种。</p>
-				</blockquote>
+				<ul>
+					<li>联合类型（Union Types）表示取值可以为多种类型中的一种。</li>
+				</ul>
 				<pre><code class="language-ts"><span class="hljs-comment">//  联合类型</span>
 <span class="hljs-keyword">type</span> des = <span class="hljs-built_in">number</span> | <span class="hljs-built_in">string</span>;
 <span class="hljs-keyword">let</span> description: des = <span class="hljs-string">&quot;desc&quot;</span>;
@@ -130,9 +129,10 @@ a = <span class="hljs-literal">false</span>;</code></pre>
 				<a href="#对象类型接口" id="对象类型接口" style="color: inherit; text-decoration: none;">
 					<h2>对象类型——接口</h2>
 				</a>
-				<blockquote>
-					<p>在 TypeScript 中，我们使用接口（Interfaces）来定义对象的类型。</p>
-				</blockquote>
+				<ul>
+					<li>在 TypeScript 中，我们使用接口（Interfaces）来定义对象的类型。</li>
+					<li>接口是 TypeScript 的一个核心知识，它能合并众多类型声明至一个类型声明</li>
+				</ul>
 				<pre><code class="language-ts"><span class="hljs-comment">// interface</span>
 <span class="hljs-comment">// 接口定义函数</span>
 <span class="hljs-keyword">interface</span> fun {
@@ -183,9 +183,9 @@ props.data.toString();
 				<a href="#数组的类型" id="数组的类型" style="color: inherit; text-decoration: none;">
 					<h2>数组的类型</h2>
 				</a>
-				<blockquote>
-					<p>在 TypeScript 中，数组类型有多种定义方式，比较灵活。</p>
-				</blockquote>
+				<ul>
+					<li>在 TypeScript 中，数组类型有多种定义方式，比较灵活。</li>
+				</ul>
 				<pre><code class="language-ts"><span class="hljs-comment">// 基础用法</span>
 <span class="hljs-keyword">const</span> arr: <span class="hljs-built_in">number</span>[] = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
 
@@ -218,9 +218,9 @@ fn(<span class="hljs-number">1</span>, { <span class="hljs-attr">a</span>: <span
 				<a href="#函数类型" id="函数类型" style="color: inherit; text-decoration: none;">
 					<h2>函数类型</h2>
 				</a>
-				<blockquote>
-					<p>注意不要混淆了 TypeScript 中的 =&gt; 和 ES6 中的 =&gt;。在 TypeScript 的类型定义中，=&gt; 用来表示函数的定义，左边是输入类型，需要用括号括起来，右边是输出类型。</p>
-				</blockquote>
+				<ul>
+					<li>注意不要混淆了 TypeScript 中的 =&gt; 和 ES6 中的 =&gt;。在 TypeScript 的类型定义中，=&gt; 用来表示函数的定义，左边是输入类型，需要用括号括起来，右边是输出类型。</li>
+				</ul>
 				<pre><code class="language-ts"><span class="hljs-comment">//  函数类型</span>
 
 <span class="hljs-comment">// 普通返回值类型设置</span>
@@ -302,11 +302,28 @@ res(<span class="hljs-string">&#x27;1&#x27;</span>, <span class="hljs-number">2<
   }
 }
 </code></pre>
+				<a href="#可实例化" id="可实例化" style="color: inherit; text-decoration: none;">
+					<h3>可实例化</h3>
+				</a>
+				<ul>
+					<li>可实例化仅仅是可调用的一种特殊情况，它使用 new 作为前缀。它意味着你需要使用 new 关键字去调用它：</li>
+				</ul>
+				<pre><code class="language-ts"><span class="hljs-keyword">interface</span> CallMeWithNewToGetString {
+  <span class="hljs-keyword">new</span> (): <span class="hljs-built_in">string</span>;
+}
+
+<span class="hljs-comment">// 使用</span>
+<span class="hljs-keyword">declare</span> <span class="hljs-keyword">const</span> Foo: CallMeWithNewToGetString;
+<span class="hljs-keyword">const</span> bar = <span class="hljs-keyword">new</span> Foo(); <span class="hljs-comment">// bar 被推断为 string 类型</span></code></pre>
 				<a href="#断言类型" id="断言类型" style="color: inherit; text-decoration: none;">
 					<h2>断言类型</h2>
 				</a>
+				<ul>
+					<li> 类型断言（Type Assertion）可以用来手动指定一个值的类型。</li>
+				</ul>
 				<blockquote>
-					<p> 类型断言（Type Assertion）可以用来手动指定一个值的类型。</p>
+					<p>TypeScript 允许你覆盖它的推断，并且能以你任何你想要的方式分析它，这种机制被称为「类型断言」。</p>
+					<p>TypeScript 类型断言用来告诉编译器你比它更了解这个类型，并且它不应该再发出错误。</p>
 				</blockquote>
 				<pre><code class="language-ts"><span class="hljs-comment">// 语法</span>
 <span class="hljs-comment">// 值 as 类型 或 &lt;类型&gt;值</span>
@@ -494,6 +511,299 @@ tom.run();
 tom.push(<span class="hljs-string">&#x27;male&#x27;</span>);
 tom.push(<span class="hljs-literal">true</span>);
 <span class="hljs-comment">// Argument of type &#x27;true&#x27; is not assignable to parameter of type &#x27;string | number&#x27;.</span></code></pre>
+				<a href="#枚举" id="枚举" style="color: inherit; text-decoration: none;">
+					<h2>枚举</h2>
+				</a>
+				<ul>
+					<li><a href="https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Enums.html">枚举参考</a></li>
+				</ul>
+				<a href="#类" id="类" style="color: inherit; text-decoration: none;">
+					<h2>类</h2>
+				</a>
+				<ul>
+					<li><a href="https://ts.xcatliu.com/advanced/class.htmlhttps://ts.xcatliu.com/advanced/class.html">类</a><blockquote>
+							<p>参考java</p>
+						</blockquote>
+					</li>
+				</ul>
+				<pre><code class="language-ts"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Animal</span> </span>{
+  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>;
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">name: <span class="hljs-built_in">string</span></span>)</span> {
+    <span class="hljs-built_in">this</span>.name = name;
+  }
+  sayHi(): <span class="hljs-built_in">string</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">`My name is <span class="hljs-subst">${<span class="hljs-built_in">this</span>.name}</span>`</span>;
+  }
+}
+
+<span class="hljs-keyword">let</span> a: Animal = <span class="hljs-keyword">new</span> Animal(<span class="hljs-string">&#x27;Jack&#x27;</span>);
+<span class="hljs-built_in">console</span>.log(a.sayHi()); <span class="hljs-comment">// My name is Jack</span></code></pre>
+				<a href="#类与接口" id="类与接口" style="color: inherit; text-decoration: none;">
+					<h2>类与接口</h2>
+				</a>
+				<ul>
+					<li><a href="https://ts.xcatliu.com/advanced/class-and-interfaces.html">类与接口</a><blockquote>
+							<p>参考java</p>
+						</blockquote>
+					</li>
+				</ul>
+				<a href="#泛型" id="泛型" style="color: inherit; text-decoration: none;">
+					<h2>泛型</h2>
+				</a>
+				<ul>
+					<li>泛型（Generics）是指在定义函数、接口或类的时候，不预先指定具体的类型，而在使用的时候再指定类型的一种特性</li>
+				</ul>
+				<pre><code class="language-ts"><span class="hljs-comment">//  未使用泛型：any类型太宽泛</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createArray</span>(<span class="hljs-params">length: <span class="hljs-built_in">number</span>, value: <span class="hljs-built_in">any</span></span>): <span class="hljs-title">any</span>[] </span>{
+  <span class="hljs-keyword">const</span> res: <span class="hljs-built_in">any</span>[] = [];
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; length; i++) {
+    res[i] = value;
+  }
+  <span class="hljs-keyword">return</span> res;
+}
+
+createArray(<span class="hljs-number">3</span>, <span class="hljs-string">&#x27;x&#x27;</span>);
+
+<span class="hljs-comment">// 使用泛型：通过使用泛型，将类型传入管理类型范围</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createArray1</span>&lt;<span class="hljs-title">T</span>&gt;(<span class="hljs-params">length: <span class="hljs-built_in">number</span>, value: T</span>): <span class="hljs-title">Array</span>&lt;<span class="hljs-title">T</span>&gt; </span>{
+  <span class="hljs-keyword">const</span> res: <span class="hljs-built_in">Array</span>&lt;T&gt; = [];
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; length; i++) {
+    res[i] = value;
+  }
+  <span class="hljs-keyword">return</span> res;
+}
+
+createArray1&lt;<span class="hljs-built_in">string</span>&gt;(<span class="hljs-number">3</span>, <span class="hljs-string">&#x27;x&#x27;</span>);
+createArray1(<span class="hljs-number">3</span>, <span class="hljs-string">&#x27;x&#x27;</span>);
+
+<span class="hljs-comment">// 定义泛型的时候，可以一次定义多个类型参数：</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">swap</span>&lt;<span class="hljs-title">T</span>, <span class="hljs-title">U</span>&gt;(<span class="hljs-params">tuple: [T, U]</span>): [<span class="hljs-title">U</span>, <span class="hljs-title">T</span>] </span>{
+  <span class="hljs-keyword">return</span> [tuple[<span class="hljs-number">1</span>], tuple[<span class="hljs-number">0</span>]];
+}
+
+swap([<span class="hljs-number">7</span>, <span class="hljs-string">&#x27;seven&#x27;</span>]); <span class="hljs-comment">// [&#x27;seven&#x27;, 7]</span>
+
+<span class="hljs-comment">// 泛型约束 ： 泛型的上下限</span>
+
+<span class="hljs-keyword">interface</span> Lengthwise {
+  <span class="hljs-attr">length</span>: <span class="hljs-built_in">number</span>;
+}
+
+<span class="hljs-comment">// 设置上限Lengthwise，泛型类型T必须是Lengthwise的子类</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loggingIdentity</span>&lt;<span class="hljs-title">T</span> <span class="hljs-title">extends</span> <span class="hljs-title">Lengthwise</span>&gt;(<span class="hljs-params">arg: T</span>): <span class="hljs-title">T</span> </span>{
+  <span class="hljs-built_in">console</span>.log(arg.length);
+  <span class="hljs-keyword">return</span> arg;
+}
+
+
+<span class="hljs-comment">// 泛型接口</span>
+
+<span class="hljs-keyword">interface</span> CreateArrayFunc {
+  &lt;T&gt;(length: <span class="hljs-built_in">number</span>, <span class="hljs-attr">value</span>: T): <span class="hljs-built_in">Array</span>&lt;T&gt;;
+}
+
+<span class="hljs-keyword">let</span> createArray2: CreateArrayFunc;
+createArray2 = <span class="hljs-function"><span class="hljs-keyword">function</span> &lt;<span class="hljs-title">T</span>&gt;(<span class="hljs-params">length: <span class="hljs-built_in">number</span>, value: T</span>): <span class="hljs-title">Array</span>&lt;<span class="hljs-title">T</span>&gt; </span>{
+  <span class="hljs-keyword">let</span> result: T[] = [];
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; length; i++) {
+    result[i] = value;
+  }
+  <span class="hljs-keyword">return</span> result;
+}
+
+createArray2(<span class="hljs-number">3</span>, <span class="hljs-string">&#x27;x&#x27;</span>); <span class="hljs-comment">// [&#x27;x&#x27;, &#x27;x&#x27;, &#x27;x&#x27;]</span>
+
+<span class="hljs-comment">// </span>
+<span class="hljs-keyword">interface</span> CreateArrayFunc1&lt;T&gt; {
+  (length: <span class="hljs-built_in">number</span>, <span class="hljs-attr">value</span>: T): <span class="hljs-built_in">Array</span>&lt;T&gt;;
+}
+
+<span class="hljs-keyword">let</span> createArray3: CreateArrayFunc1&lt;<span class="hljs-built_in">any</span>&gt;;
+createArray3 = <span class="hljs-function"><span class="hljs-keyword">function</span> &lt;<span class="hljs-title">T</span>&gt;(<span class="hljs-params">length: <span class="hljs-built_in">number</span>, value: T</span>): <span class="hljs-title">Array</span>&lt;<span class="hljs-title">T</span>&gt; </span>{
+  <span class="hljs-keyword">let</span> result: T[] = [];
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; length; i++) {
+    result[i] = value;
+  }
+  <span class="hljs-keyword">return</span> result;
+}
+
+createArray3(<span class="hljs-number">3</span>, <span class="hljs-string">&#x27;x&#x27;</span>); <span class="hljs-comment">// [&#x27;x&#x27;, &#x27;x&#x27;, &#x27;x&#x27;]</span>
+
+
+<span class="hljs-comment">// 泛型类</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GenericNumber</span>&lt;<span class="hljs-title">T</span>&gt; </span>{
+  <span class="hljs-attr">zeroValue</span>: T | <span class="hljs-literal">undefined</span>;
+  add: (<span class="hljs-function">(<span class="hljs-params">x: T, y: T</span>) =&gt;</span> T) | <span class="hljs-literal">undefined</span>;
+}
+
+<span class="hljs-keyword">let</span> myGenericNumber = <span class="hljs-keyword">new</span> GenericNumber&lt;<span class="hljs-built_in">number</span>&gt;();
+myGenericNumber.zeroValue = <span class="hljs-number">0</span>;
+myGenericNumber.add = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">x, y</span>) </span>{ <span class="hljs-keyword">return</span> x + y; };</code></pre>
+				<a href="#声明合并" id="声明合并" style="color: inherit; text-decoration: none;">
+					<h2>声明合并</h2>
+				</a>
+				<ul>
+					<li>如果定义了两个相同名字的函数、接口或类，那么它们会合并成一个类型：</li>
+					<li><a href="https://ts.xcatliu.com/advanced/declaration-merging.html">接口合并</a></li>
+				</ul>
+				<ol>
+					<li>函数合并</li>
+				</ol>
+				<pre><code class="language-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">reverse</span>(<span class="hljs-params">x: <span class="hljs-built_in">number</span></span>): <span class="hljs-title">number</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">reverse</span>(<span class="hljs-params">x: <span class="hljs-built_in">string</span></span>): <span class="hljs-title">string</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">reverse</span>(<span class="hljs-params">x: <span class="hljs-built_in">number</span> | <span class="hljs-built_in">string</span></span>): <span class="hljs-title">number</span> | <span class="hljs-title">string</span> </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> x === <span class="hljs-string">&#x27;number&#x27;</span>) {
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">Number</span>(x.toString().split(<span class="hljs-string">&#x27;&#x27;</span>).reverse().join(<span class="hljs-string">&#x27;&#x27;</span>));
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> x === <span class="hljs-string">&#x27;string&#x27;</span>) {
+        <span class="hljs-keyword">return</span> x.split(<span class="hljs-string">&#x27;&#x27;</span>).reverse().join(<span class="hljs-string">&#x27;&#x27;</span>);
+    }
+}</code></pre>
+				<ol start="2">
+					<li>接口合并</li>
+				</ol>
+				<pre><code class="language-ts"><span class="hljs-keyword">interface</span> Alarm {
+    <span class="hljs-attr">price</span>: <span class="hljs-built_in">number</span>;
+}
+<span class="hljs-keyword">interface</span> Alarm {
+    <span class="hljs-attr">weight</span>: <span class="hljs-built_in">number</span>;
+}
+<span class="hljs-comment">// 相当于：</span>
+<span class="hljs-keyword">interface</span> Alarm {
+    <span class="hljs-attr">price</span>: <span class="hljs-built_in">number</span>;
+    weight: <span class="hljs-built_in">number</span>;
+}
+
+<span class="hljs-keyword">interface</span> Alarm {
+    <span class="hljs-attr">price</span>: <span class="hljs-built_in">number</span>;
+    alert(s: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">string</span>;
+}
+<span class="hljs-keyword">interface</span> Alarm {
+    <span class="hljs-attr">weight</span>: <span class="hljs-built_in">number</span>;
+    alert(s: <span class="hljs-built_in">string</span>, <span class="hljs-attr">n</span>: <span class="hljs-built_in">number</span>): <span class="hljs-built_in">string</span>;
+}
+<span class="hljs-comment">// 相当于：</span>
+<span class="hljs-keyword">interface</span> Alarm {
+    <span class="hljs-attr">price</span>: <span class="hljs-built_in">number</span>;
+    weight: <span class="hljs-built_in">number</span>;
+    alert(s: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">string</span>;
+    alert(s: <span class="hljs-built_in">string</span>, <span class="hljs-attr">n</span>: <span class="hljs-built_in">number</span>): <span class="hljs-built_in">string</span>;
+}</code></pre>
+				<a href="#全局模块与文件模块" id="全局模块与文件模块" style="color: inherit; text-decoration: none;">
+					<h2>全局模块与文件模块</h2>
+				</a>
+				<ul>
+					<li>默认TypeScript中声明的代码都处于全局命名空间中。使用全局变量空间是危险的，因为它会与文件内的代码命名冲突。</li>
+					<li>文件模块避免全局污染。</li>
+					<li>推荐模块使用<code>module: commonjs</code>。</li>
+					<li>模块语法推荐使用ES模块语法。</li>
+				</ul>
+				<p>全局模块</p>
+				<pre><code class="language-ts"><span class="hljs-comment">// foo.ts</span>
+<span class="hljs-keyword">const</span> foo1 : <span class="hljs-built_in">string</span> = <span class="hljs-string">&quot;foo&quot;</span>;
+
+<span class="hljs-comment">// bar.ts 可以使用foo1</span>
+<span class="hljs-keyword">let</span> bar: <span class="hljs-built_in">string</span> = <span class="hljs-string">&#x27;bar&#x27;</span>;
+bar = foo1;
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;bar: &#x27;</span>, bar);</code></pre>
+				<p>局部模块</p>
+				<pre><code class="language-ts"><span class="hljs-comment">// foo.ts</span>
+<span class="hljs-keyword">let</span> foo1: <span class="hljs-built_in">string</span> = <span class="hljs-string">&#x27;foo&#x27;</span>;
+<span class="hljs-keyword">export</span> { foo1 };
+
+
+<span class="hljs-comment">// bar.ts</span>
+<span class="hljs-keyword">let</span> bar: <span class="hljs-built_in">string</span> = <span class="hljs-string">&#x27;bar&#x27;</span>;
+
+<span class="hljs-comment">// 无法直接使用全局变量foo1</span>
+<span class="hljs-comment">// 找不到名称“foo1”。你是否指的是“foo”?ts(2552)</span>
+<span class="hljs-comment">// assertType.ts(54, 7): 在此处声明了 &quot;foo&quot;</span>
+bar = foo1;
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;bar: &#x27;</span>, bar);
+
+
+<span class="hljs-comment">// bar.ts 使用foo1</span>
+<span class="hljs-comment">// 方法1</span>
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> foo <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./foo&#x27;</span>;
+<span class="hljs-keyword">let</span> bar: <span class="hljs-built_in">string</span> = <span class="hljs-string">&#x27;bar&#x27;</span>;
+bar = foo.foo1;
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;bar: &#x27;</span>, bar);
+
+<span class="hljs-comment">// 方法2</span>
+<span class="hljs-keyword">import</span> { foo1 } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./foo&#x27;</span>
+<span class="hljs-keyword">let</span> bar: <span class="hljs-built_in">string</span> = <span class="hljs-string">&#x27;bar&#x27;</span>;
+bar = foo1;
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;bar: &#x27;</span>, bar);
+
+<span class="hljs-comment">// 方法3</span>
+<span class="hljs-keyword">import</span> { foo1 <span class="hljs-keyword">as</span> foo } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./foo&#x27;</span>;
+<span class="hljs-keyword">let</span> bar: <span class="hljs-built_in">string</span> = <span class="hljs-string">&#x27;bar&#x27;</span>;
+bar = foo;
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;bar: &#x27;</span>, bar);</code></pre>
+				<a href="#交叉类型" id="交叉类型" style="color: inherit; text-decoration: none;">
+					<h2>交叉类型</h2>
+				</a>
+				<ul>
+					<li>在 JavaScript 中， <code>extend</code> 是一种非常常见的模式，在这种模式中，你可以从两个对象中创建一个新对象，新对象拥有着两个对象所有的功能。交叉类型可以让你安全的使用此种模式</li>
+				</ul>
+				<pre><code class="language-ts"><span class="hljs-comment">// 返回 T &amp; U  合并的类型</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">extend</span>&lt;<span class="hljs-title">T</span> <span class="hljs-title">extends</span> <span class="hljs-title">object</span>, <span class="hljs-title">U</span> <span class="hljs-title">extends</span> <span class="hljs-title">object</span>&gt;(<span class="hljs-params">first: T, second: U</span>): <span class="hljs-title">T</span> &amp; <span class="hljs-title">U</span> </span>{
+  <span class="hljs-keyword">const</span> result = &lt;T &amp; U&gt;{};
+  for (let id in first) {
+    (&lt;T&gt;result)[id] = first[id];
+  }
+  for (let id in second) {
+    if (!result.hasOwnProperty(id)) {
+      (&lt;U&gt;result)[id] = second[id];
+    }
+  }
+
+  return result;
+}
+
+// 返回 x = {a:&#x27;hello&#x27;,b:42}
+const x = extend({ a: &#x27;hello&#x27; }, { b: 42 });
+
+// 现在 x 拥有了 a 属性与 b 属性
+const a = x.a;
+const b = x.b;</code></pre>
+				<a href="#有静态方法的枚举" id="有静态方法的枚举" style="color: inherit; text-decoration: none;">
+					<h2>有静态方法的枚举</h2>
+				</a>
+				<ul>
+					<li>你可以使用 enum + namespace 的声明的方式向枚举类型添加静态方法。如下例所示，我们将静态成员 isBusinessDay 添加到枚举上</li>
+				</ul>
+				<pre><code class="language-ts"><span class="hljs-built_in">enum</span> Weekday {
+    Monday,
+    Tuesday,
+    Wednesday,
+    Thursday,
+    Friday,
+    Saturday,
+    Sunday
+}
+
+<span class="hljs-keyword">namespace</span> Weekday {
+    <span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isBusinessDay</span>(<span class="hljs-params">day: Weekday</span>) </span>{
+        <span class="hljs-keyword">switch</span> (day) {
+            <span class="hljs-keyword">case</span> Weekday.Saturday:
+            <span class="hljs-keyword">case</span> Weekday.Sunday:
+                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+            <span class="hljs-keyword">default</span>:
+                <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+        }
+    }
+}
+
+<span class="hljs-keyword">const</span> mon = Weekday.Monday;
+<span class="hljs-keyword">const</span> sun = Weekday.Sunday;
+
+<span class="hljs-built_in">console</span>.log(Weekday.isBusinessDay(mon)); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.log(Weekday.isBusinessDay(sun));
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Weekday.Friday: &#x27;</span>, Weekday.Friday);</code></pre>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -515,10 +825,22 @@ tom.push(<span class="hljs-literal">true</span>);
 						<a href="modules/_functiontype_.html">&quot;function<wbr>Type&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="modules/_generics_.html">&quot;generics&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="modules/_hello_.html">&quot;hello&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/_interface_.html">&quot;interface&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_module_bar_.html">&quot;module/bar&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_module_foo_.html">&quot;module/foo&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_object_.html">&quot;object&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/_primitivetype_.html">&quot;primitive<wbr>Type&quot;</a>
@@ -540,13 +862,19 @@ tom.push(<span class="hljs-literal">true</span>);
 				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
 				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
 			</ul>
 		</div>
 	</div>

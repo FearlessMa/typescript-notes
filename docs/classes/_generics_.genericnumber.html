@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>HttpError | typescript</title>
+	<title>GenericNumber | typescript</title>
 	<meta name="description" content="Documentation for typescript">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,29 +56,32 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_asserttype_.html">&quot;assertType&quot;</a>
+					<a href="../modules/_generics_.html">&quot;generics&quot;</a>
 				</li>
 				<li>
-					<a href="_asserttype_.httperror.html">HttpError</a>
+					<a href="_generics_.genericnumber.html">GenericNumber</a>
 				</li>
 			</ul>
-			<h1>Class HttpError</h1>
+			<h1>Class GenericNumber&lt;T&gt;</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-type-parameters">
+				<h3>Type parameters</h3>
+				<ul class="tsd-type-parameters">
+					<li>
+						<h4>T</h4>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="_asserttype_.apierror.html#error" class="tsd-signature-type">Error</a>
-						<ul class="tsd-hierarchy">
-							<li>
-								<span class="target">HttpError</span>
-							</li>
-						</ul>
+						<span class="target">GenericNumber</span>
 					</li>
 				</ul>
 			</section>
@@ -89,11 +92,8 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_asserttype_.httperror.html#message" class="tsd-kind-icon">message</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_asserttype_.httperror.html#name" class="tsd-kind-icon">name</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_asserttype_.httperror.html#stack" class="tsd-kind-icon">stack</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_asserttype_.httperror.html#statuscode" class="tsd-kind-icon">status<wbr>Code</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="_asserttype_.httperror.html#error" class="tsd-kind-icon">Error</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_generics_.genericnumber.html#add" class="tsd-kind-icon">add</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_generics_.genericnumber.html#zerovalue" class="tsd-kind-icon">zero<wbr>Value</a></li>
 							</ul>
 						</section>
 					</div>
@@ -101,56 +101,23 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-					<a name="message" class="tsd-anchor"></a>
-					<h3>message</h3>
-					<div class="tsd-signature tsd-kind-icon">message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="add" class="tsd-anchor"></a>
+					<h3>add</h3>
+					<div class="tsd-signature tsd-kind-icon">add<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="_asserttype_.apierror.html">ApiError</a>.<a href="_asserttype_.apierror.html#message">message</a></p>
 						<ul>
-							<li>Defined in node_modules/_typescript@4.1.3@typescript/lib/lib.es5.d.ts:974</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-					<a name="name" class="tsd-anchor"></a>
-					<h3>name</h3>
-					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="_asserttype_.apierror.html">ApiError</a>.<a href="_asserttype_.apierror.html#name">name</a></p>
-						<ul>
-							<li>Defined in node_modules/_typescript@4.1.3@typescript/lib/lib.es5.d.ts:973</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-					<a name="stack" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> stack</h3>
-					<div class="tsd-signature tsd-kind-icon">stack<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="_asserttype_.apierror.html">ApiError</a>.<a href="_asserttype_.apierror.html#stack">stack</a></p>
-						<ul>
-							<li>Defined in node_modules/_typescript@4.1.3@typescript/lib/lib.es5.d.ts:975</li>
+							<li>Defined in <a href="https://github.com/FearlessMa/typescript-notes/blob/1d7c87d/src/generics.ts#L85">src/generics.ts:85</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="statuscode" class="tsd-anchor"></a>
-					<h3>status<wbr>Code</h3>
-					<div class="tsd-signature tsd-kind-icon">status<wbr>Code<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 200</span></div>
+					<a name="zerovalue" class="tsd-anchor"></a>
+					<h3>zero<wbr>Value</h3>
+					<div class="tsd-signature tsd-kind-icon">zero<wbr>Value<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/FearlessMa/typescript-notes/blob/1d7c87d/src/assertType.ts#L41">src/assertType.ts:41</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
-					<a name="error" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> Error</h3>
-					<div class="tsd-signature tsd-kind-icon">Error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ErrorConstructor</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in node_modules/_typescript@4.1.3@typescript/lib/lib.es5.d.ts:984</li>
+							<li>Defined in <a href="https://github.com/FearlessMa/typescript-notes/blob/1d7c87d/src/generics.ts#L84">src/generics.ts:84</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -165,7 +132,7 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/_arraytype_.html">&quot;array<wbr>Type&quot;</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="../modules/_asserttype_.html">&quot;assert<wbr>Type&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -174,7 +141,7 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/_functiontype_.html">&quot;function<wbr>Type&quot;</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="../modules/_generics_.html">&quot;generics&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -199,56 +166,50 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_asserttype_.apierror.html" class="tsd-kind-icon">Api<wbr>Error</a>
-					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-class tsd-parent-kind-module">
-						<a href="_asserttype_.httperror.html" class="tsd-kind-icon">Http<wbr>Error</a>
+					<li class="current tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="_generics_.genericnumber.html" class="tsd-kind-icon">Generic<wbr>Number</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="_asserttype_.httperror.html#message" class="tsd-kind-icon">message</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="_asserttype_.httperror.html#name" class="tsd-kind-icon">name</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="_asserttype_.httperror.html#stack" class="tsd-kind-icon">stack</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_generics_.genericnumber.html#add" class="tsd-kind-icon">add</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_asserttype_.httperror.html#statuscode" class="tsd-kind-icon">status<wbr>Code</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
-								<a href="_asserttype_.httperror.html#error" class="tsd-kind-icon">Error</a>
+								<a href="_generics_.genericnumber.html#zerovalue" class="tsd-kind-icon">zero<wbr>Value</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/_asserttype_.cat.html" class="tsd-kind-icon">Cat</a>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="../interfaces/_generics_.createarrayfunc.html" class="tsd-kind-icon">Create<wbr>Array<wbr>Func</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="../interfaces/_generics_.createarrayfunc1.html" class="tsd-kind-icon">Create<wbr>Array<wbr>Func1</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/_asserttype_.icat.html" class="tsd-kind-icon">ICat</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/_asserttype_.ifish.html" class="tsd-kind-icon">IFish</a>
+						<a href="../interfaces/_generics_.lengthwise.html" class="tsd-kind-icon">Lengthwise</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-module">
-						<a href="../modules/_asserttype_.html#foo" class="tsd-kind-icon">foo</a>
+						<a href="../modules/_generics_.html#createarray2" class="tsd-kind-icon">create<wbr>Array2</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-module">
-						<a href="../modules/_asserttype_.html#tom" class="tsd-kind-icon">tom</a>
+						<a href="../modules/_generics_.html#createarray3" class="tsd-kind-icon">create<wbr>Array3</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module">
+						<a href="../modules/_generics_.html#mygenericnumber" class="tsd-kind-icon">my<wbr>Generic<wbr>Number</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="../modules/_asserttype_.html#getcachedata" class="tsd-kind-icon">get<wbr>Cache<wbr>Data</a>
+						<a href="../modules/_generics_.html#createarray" class="tsd-kind-icon">create<wbr>Array</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="../modules/_asserttype_.html#isapierror" class="tsd-kind-icon">is<wbr>Api<wbr>Error</a>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="../modules/_generics_.html#createarray1" class="tsd-kind-icon">create<wbr>Array1</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="../modules/_asserttype_.html#isfish" class="tsd-kind-icon">is<wbr>Fish</a>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="../modules/_generics_.html#loggingidentity" class="tsd-kind-icon">logging<wbr>Identity</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="../modules/_generics_.html#swap" class="tsd-kind-icon">swap</a>
 					</li>
 				</ul>
 			</nav>
@@ -277,12 +238,6 @@
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
 			</ul>
 		</div>
 	</div>

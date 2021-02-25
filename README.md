@@ -254,12 +254,28 @@ function reverse(x: number | string): number | string {
 }
 
 ```
+### 可实例化
+
+* 可实例化仅仅是可调用的一种特殊情况，它使用 new 作为前缀。它意味着你需要使用 new 关键字去调用它：
+
+```ts
+interface CallMeWithNewToGetString {
+  new (): string;
+}
+
+// 使用
+declare const Foo: CallMeWithNewToGetString;
+const bar = new Foo(); // bar 被推断为 string 类型
+```
 
 
 ## 断言类型
 
 *  类型断言（Type Assertion）可以用来手动指定一个值的类型。
 
+> TypeScript 允许你覆盖它的推断，并且能以你任何你想要的方式分析它，这种机制被称为「类型断言」。
+> 
+> TypeScript 类型断言用来告诉编译器你比它更了解这个类型，并且它不应该再发出错误。
 
 
 ```ts
@@ -746,3 +762,5 @@ console.log(Weekday.isBusinessDay(mon)); // true
 console.log(Weekday.isBusinessDay(sun));
 console.log('Weekday.Friday: ', Weekday.Friday);
 ```
+
+
